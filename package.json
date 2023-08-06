@@ -1,0 +1,13 @@
+{
+  "name": "university-schdule",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yahya-Cheikh-Maazouz <yahya9bamba@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "concurrently \"node ./auth-api/src/api/server.js\" \"node ./classroom-api/src/api/server.js\" \"node ./course-api/src/api/server.js\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
