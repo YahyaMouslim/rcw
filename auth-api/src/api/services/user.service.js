@@ -65,14 +65,20 @@ async function signup(user) {
         const expirationTimestamp = Math.floor(Date.now() / 1000) + (15 * 60);
         const activationToken = crypto.randomBytes(32).toString('hex');
         
+        
 
         const newUser = new User({
             email: user.email,
             password: hashedPassword,
             activationToken : activationToken,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            fullName:user.fullName ,
+            active:true,
+            role:user?.role,
             activationTokenExpiry:expirationTimestamp
         });
-        
+        console.log(newUser);
         await sendAccountValidationEmail(newUser, activationToken);
 
         await newUser.save();

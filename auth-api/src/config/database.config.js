@@ -1,8 +1,9 @@
 // config/database.js
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://yahya9maazouz:q0kaRV5GR7TpB8Xs@users.5fdt3r8.mongodb.net/users', {
+mongoose.connect('mongodb+srv://mouslimyahya545:rlrXVRWmgI4xKnbV@cluster0.prz8ql0.mongodb.net/emploiUI', {
   useNewUrlParser: true,
+  
   useUnifiedTopology: true,
 });
 

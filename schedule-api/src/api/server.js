@@ -15,7 +15,7 @@ app.use(cors());
 app.use(jwt());
 
 // api routes
-app.use('/api/v1', require('./routes/user.route'));
+app.use('/api/v1', require('./routes/schedule.route'));
 
 // global error handler
 app.use(errorHandler);
@@ -24,7 +24,7 @@ app.use(errorHandler);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // start server
-const port = process.env.NODE_ENV === 'production' ? 80 : 3000;
+const port = process.env.NODE_ENV === 'production' ? 80 : 3004;
 const server = app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });

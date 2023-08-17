@@ -1,8 +1,13 @@
+require('rootpath')();
+const path = require('path');
+
 const fs = require('fs');
 
 function renderTemplate(templateName, data) {
-    const templatePath = `src/api/helpers/${templateName}.html`;
-    const template = fs.readFileSync(templatePath, 'utf-8');
+    
+    const templatePath1 = path.join(__dirname, 'email-activation.template.html');
+   // const templatePath = templatePath;
+    const template = fs.readFileSync(templatePath1, 'utf-8');
     const renderedTemplate = replacePlaceholders(template, data);
     return renderedTemplate;
 }
